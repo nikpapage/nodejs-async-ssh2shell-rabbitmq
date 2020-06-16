@@ -4,12 +4,14 @@
 
 const appdynamics = require("appdynamics")
 appdynamics.profile({
-    controllerHostName: 'nik-2044nosshcontroller-l6r6yjt4.appd-sales.com',
-    controllerPort: 8090,
-    controllerSslEnabled: false,
-    accountName: 'customer1',
-    accountAccessKey: '7b539d48-1b18-4c12-ac76-d13739db4a7d',
-    applicationName: 'NodeJS_WebApp_Nik',
+    controllerHostName: process.env.APPDYNAMICS_CONTROLLER_HOST_NAME,
+    controllerPort: process.env.APPDYNAMICS_CONTROLLER_PORT,
+        // If SSL, be sure to enable the next line
+    controllerSslEnabled: process.env.APPDYNAMICS_CONTROLLER_SSL_ENABLED,
+    accountName: process.env.APPDYNAMICS_AGENT_ACCOUNT_NAME,
+    accountAccessKey: process.env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY,
+    applicationName: process.env.APPDYNAMICS_AGENT_APPLICATION_NAME,
+    
     tierName: 'Queue_Receiver',
     nodeName: 'receiver',
     debug: true
