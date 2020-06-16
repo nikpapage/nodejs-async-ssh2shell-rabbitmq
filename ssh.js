@@ -11,8 +11,8 @@ function executeMultipleCommands(asyncExitCall,asyncTxn) {
         server: {
             host:         '127.0.0.1',
             port:         22,
-            userName:     'thitsa',
-            password:     'Admin123321'
+            userName:     process.env.ssh_username,
+            password:     process.env.ssh_password
       },
       idleTimeOut:       500000,
       commands:       ["sleep 1"],
