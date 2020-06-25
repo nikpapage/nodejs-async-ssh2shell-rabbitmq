@@ -13,9 +13,6 @@ app.post('/echo', function (request, response) {
       body.push(chunk);
     }).on('end', () => {
     	 data = Buffer.concat(body).toString();
-    	 console.log("----Message-----");
-   	  console.log(data)
-
     	 console.log("Step 2:---Preparing Internal HTTP Exit Call---")
     	 //Async Exit call to capture everything that goes on on SSH2SHELL
    	  console.log("Step 3:---Preparing Downstram(SSH2SHELL)---");
