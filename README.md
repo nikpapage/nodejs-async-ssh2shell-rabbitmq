@@ -8,11 +8,7 @@ git clone https://github.com/nikpapage/nodejs_async_ssh_rabbitmq.git
 chmod 744 install_rabbit.sh
 ./install_rabbit.sh
 
-npm install appdynamics
-npm install ssh2shell
-npm install amqplib
-npm install express
-npm install dotenv
+npm install
 npm init
 
 //modify using the env.example
