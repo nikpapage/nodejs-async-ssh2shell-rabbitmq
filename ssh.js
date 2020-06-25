@@ -6,7 +6,7 @@ var SSH2Shell = require('ssh2shell');
 
 
 
-function executeMultipleCommands(asyncExitCall,asyncTxn) {
+function executeMultipleCommands(asyncExitCall,asyncTxn,data) {
     var host = {
         server: {
             host:         '127.0.0.1',
@@ -25,16 +25,15 @@ function executeMultipleCommands(asyncExitCall,asyncTxn) {
            appdynamics.addExitandCorrelationHeader( asyncTxn, { host: 'localhost', port: 5672, queue: 'logs', routingKey: 'routing key'}, true).then(function(result) {
                const { headers, endExitCall } = result
                console.log("Step 5:---Publishing message to queue---");
-               var data='Hello World';
                produce(config.rabbit.queue, data, durable = false, { headers });
                console.log("Step 6:---Complete AppDynamics Exit Call---");
 	       endExitCall();
-               console.log("Step 7:---Complete AppDynamics transaction---");
-               console.log("Step 8:---Complete ssh2shell exit call---");
          })
          i++;
          }
-	 asyncTxn.endExitCall(asyncExitCall);
+	 //Using the reference of the original transaction terminate the ssh2shell exit call, this automatically terminates the transaction.
+ 	  console.log("Step 7:---Complete AppDynamics transaction---");
+          asyncTxn.endExitCall(asyncExitCall);
        },
    };
     SSH = new SSH2Shell(host);
