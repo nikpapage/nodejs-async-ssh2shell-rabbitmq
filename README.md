@@ -6,14 +6,19 @@ cd nodejs_async_ssh_rabbitmq
 git clone https://github.com/nikpapage/nodejs_async_ssh_rabbitmq.git
 
 chmod 744 install_rabbit.sh
+
 sudo ./install_rabbit.sh
 
 npm install
 
-//modify using the env.example
+*modify using the env.example and export the environmental variables*
+
+
 source env.sh
 
 nohup node server &
+
+
 nohup node mq-receiver &
 
 Use an upstream webserver, postman or curl to perform a post request on the server's url 
