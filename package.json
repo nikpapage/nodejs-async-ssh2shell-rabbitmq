@@ -1,0 +1,28 @@
+{
+  "name": "nodejs_async_ssh_rabbitmq",
+  "version": "1.0.0",
+  "description": "mkdir nodejs_async_ssh_rabbitmq cd nodejs_async_ssh_rabbitmq",
+  "main": "appdynamics_service.js",
+  "dependencies": {
+    "amqplib": "^0.5.6",
+    "appdynamics": "^20.6.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ssh2shell": "^1.9.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikpapage/nodejs_async_ssh_rabbitmq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikpapage/nodejs_async_ssh_rabbitmq/issues"
+  },
+  "homepage": "https://github.com/nikpapage/nodejs_async_ssh_rabbitmq#readme"
+}
