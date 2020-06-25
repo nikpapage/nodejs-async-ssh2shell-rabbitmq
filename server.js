@@ -5,7 +5,7 @@ var ssh = require('./ssh');
 
 
 
-app.post('/echo', function (request, response) {
+app.post('/publish', function (request, response) {
     console.log("Step 1:----Received Request---");
 
     var body = [];
