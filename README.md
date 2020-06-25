@@ -9,7 +9,6 @@ chmod 744 install_rabbit.sh
 sudo ./install_rabbit.sh
 
 npm install
-npm init
 
 //modify using the env.example
 source env.sh
